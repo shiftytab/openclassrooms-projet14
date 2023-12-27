@@ -25,11 +25,14 @@ export default function index() : JSX.Element {
     employeeState: '',
     zipCode: ''
   }
+
   const [form, setForm] = useState({...initialData});
 
   const dispatch = useDispatch();
 
-
+  /**
+   * Handle save employee
+   */
   const handleSaveEmployee = async(e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(addEmployee(form));
@@ -37,6 +40,9 @@ export default function index() : JSX.Element {
     toast.success('Employee added successfully');
   };
 
+  /**
+   * On user update field
+   */
   const handleUpdateField = (field : keyof EmployeePropsType, value : string|number|Date) : void => {
     setForm({
       ...form,
