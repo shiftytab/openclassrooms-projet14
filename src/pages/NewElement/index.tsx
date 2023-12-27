@@ -50,6 +50,9 @@ export default function index() : JSX.Element {
     });
   }
 
+  // Update the document title using the browser API
+  document.title = "HRNet - Create Employee";
+
   return (
     <Fragment>
       <Navbar />

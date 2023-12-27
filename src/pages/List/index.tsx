@@ -8,8 +8,10 @@ import styled from 'styled-components';
 
 const List = () => {
 
+  // Get the employees from the store
   const employees = useSelector((state: RootState) => state.employee);
   
+  // Table columns
   const TableColumns = [
     {
       id: "firstName",
@@ -49,6 +51,7 @@ const List = () => {
     }
   ]
 
+  // Format the date to be more readable
   const TableData = employees.map((employee: EmployeePropsType) => {
     return {
       ...employee,
@@ -56,6 +59,9 @@ const List = () => {
       startDate: dayjs(employee.startDate).format('MM/DD/YYYY'),
     }
   });
+
+  // Update the document title using the browser API 
+  document.title = "HRNet - Employee List";
 
   return (
     <>
