@@ -11,6 +11,7 @@ import Navbar from '@/components/Navbar';
 import styled from 'styled-components';
 import SelectList from '@shiftytab/reactselectlist';
 import toast from 'react-hot-toast';
+import Modal from '@/components/Modal';
 
 export default function index() : JSX.Element {
   
@@ -25,8 +26,8 @@ export default function index() : JSX.Element {
     employeeState: '',
     zipCode: ''
   }
-
   const [form, setForm] = useState({...initialData});
+  const [showModal, setShowModal] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -37,7 +38,7 @@ export default function index() : JSX.Element {
     e.preventDefault();
     dispatch(addEmployee(form));
     setForm({...initialData});
-    toast.success('Employee added successfully');
+    setShowModal(true);
   };
 
   /**
@@ -137,6 +138,9 @@ export default function index() : JSX.Element {
         </form>
 
       </Container>
+      <Modal title="Employee created !" show={showModal} handleClose={() => setShowModal(state => !state)}>
+        <p>the employee has been created</p>
+      </Modal>
     </Fragment>
   );
 }
