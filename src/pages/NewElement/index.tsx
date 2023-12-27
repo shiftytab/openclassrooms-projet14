@@ -10,7 +10,6 @@ import { EmployeePropsType } from '@/types/EmployeeType';
 import Navbar from '@/components/Navbar';
 import styled from 'styled-components';
 import SelectList from '@shiftytab/reactselectlist';
-import toast from 'react-hot-toast';
 import Modal from '@/components/Modal';
 
 export default function index() : JSX.Element {
@@ -220,6 +219,7 @@ const SaveButton = styled.button`
   width: 100%;
   color: #fff;
   font-weight: bold;
+  cursor: pointer;
   &:hover {
     background-color: #0d6efd;
   }
