@@ -1,12 +1,10 @@
 import styled from "styled-components"
 import {APP_NAME} from '@/Meta';
 import { NavLink } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
 
 export default function Navbar() {
   return (
     <Container>
-        <Toaster/>
         <Nav>
             <Title>{APP_NAME}</Title>
         </Nav>
